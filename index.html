@@ -289,5 +289,19 @@
   <a class="btn block" href="https://650fa0p3ecpdhpdhsrp85cbwbe.hop.clickbank.net/" rel="sponsored nofollow noopener" target="_blank">Check Price on Official Site →</a>
 </div>
 
+<script>
+// Repassa ?src=canal para os links da ClickBank como ?tid=canal
+(function(){
+  try{
+    var src=new URLSearchParams(location.search).get('src');
+    if(!src) return;
+    src=src.toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,24);
+    if(!src) return;
+    document.querySelectorAll('a[href*="hop.clickbank.net"]').forEach(function(a){
+      var u=new URL(a.href); u.searchParams.set('tid',src); a.href=u.toString();
+    });
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
